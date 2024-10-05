@@ -53,6 +53,10 @@ const select = {
   };
 
   const app = {
+    initMenu: function(){
+      const test = new Products
+      console.log(test)
+    },
     init: function(){
       const thisApp = this;
       console.log('*** App starting ***');
@@ -60,8 +64,20 @@ const select = {
       console.log('classNames:', classNames);
       console.log('settings:', settings);
       console.log('templates:', templates);
+      thisApp.initMenu()
     },
   };
+
+
+class Products {
+    constructor(){
+    const thisProduct = this
+
+    console.log(thisProduct)
+ }
+}
+
+
 
   app.init();
 }
