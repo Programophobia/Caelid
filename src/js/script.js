@@ -132,9 +132,11 @@ class Products {
 }
 
 initOrderForm(){
+  const thisProduct = this;
   console.log(initOrderForm)
 }
  processOrder(){
+  const thisProduct = this;
   console.log(this.processOrder)
  }
 
