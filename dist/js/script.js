@@ -163,13 +163,13 @@ initOrderForm(){
     const param = thisProduct.data.params[paramId]
      
       for(let optionId in param.options) {
-        // determine option value, e.g. optionId = 'olives', option 
+      
   
         const option = param.options[optionId];
         console.log(optionId, option);
       }
     }
-    // update calculated price in the HTML
+   
     thisProduct.priceElem.innerHTML = price;
     const test = thisProduct.data.class
     console.log(test)
