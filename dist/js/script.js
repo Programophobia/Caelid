@@ -56,8 +56,9 @@ const select = {
     initMenu: function(){
       const thisApp = this
       
-      for(let productData in thisApp.data.Products){
-        new Products(productData, thisApp.data.Products[productData])
+      for(let productData in thisApp.data.products){
+        new Products(productData, thisApp.data.products[productData])
+        console.log(productData, thisApp.data.products[productData])
       }
     },
     initData: function(){
