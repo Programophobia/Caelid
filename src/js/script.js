@@ -96,8 +96,22 @@ class Products {
   menuContainer.appendChild(thisProduct.element)
  }
  initAccordion(){
+  const thisProduct = this;
+ 
+  const clickableTrigger = thisProduct.element.querySelector(select.menuProduct.clickable)
+ 
+      clickableTrigger.addEventListener('click', function(event) 
+    {
+    event.preventDefault()
+      
+        const activeProduct = document.querySelector(select.all.menuProductsActive)
 
- }
+    if(activeProduct !==null && activeProduct !== thisProduct.element){
+      thisProduct.element.classList.remove(classNames.menuProduct.wrapperActive)
+    }
+    thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive)
+  });
+}
 }
 
 
