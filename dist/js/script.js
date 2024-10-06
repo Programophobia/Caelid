@@ -88,7 +88,11 @@ class Products {
  }
  
  renderInMenu(){
-  thisProduct = this
+  const thisProduct = this
+  const genaretedHTML = templates.menuProduct(thisProduct.data)
+  thisProduct.element = utils.createDOMFromHTML(genaretedHTML)
+  const menuContainer = document.querySelector(select.containerOf.menu)
+  menuContainer.appendChild(thisProduct.element)
  }
 }
 
