@@ -54,8 +54,11 @@ const select = {
 
   const app = {
     initMenu: function(){
-      const test = new Products
-      console.log(test)
+      const thisApp = this
+      
+      for(let productData in thisApp.data.Products){
+        new Products(productData, thisApp.data.Products[productData])
+      }
     },
     initData: function(){
       const thisApp = this
