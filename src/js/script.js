@@ -156,7 +156,26 @@ initOrderForm(){
  processOrder(){
   const thisProduct = this;
   console.log(this.processOrder)
- }
+  const formData = utils.serializeFormToObject(thisProduct.form)
+  console.log(formData)
+  let price = thisProduct.data.price
+  for(let paramId in thisProduct.data.params){
+    const param = thisProduct.data.params[paramId]
+     
+      for(let optionId in param.options) {
+      
+  
+        const option = param.options[optionId];
+        console.log(optionId, option);
+      }
+    }
+   
+    thisProduct.priceElem.innerHTML = price;
+    const test = thisProduct.data.class
+    console.log(test)
+  }
+ 
+ 
 
 
 }
