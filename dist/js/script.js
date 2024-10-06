@@ -83,7 +83,12 @@ class Products {
     const thisProduct = this
     thisProduct.id = id
     thisProduct.data = data
+    thisProduct.renderInMenu()
     console.log(thisProduct)
+ }
+ 
+ renderInMenu(){
+  thisProduct = this
  }
 }
 
