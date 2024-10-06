@@ -112,6 +112,8 @@ class Products {
     thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = 
     thisProduct.element.querySelector(select.menuProduct.priceElem);
+    thisProduct.imageWrapper =
+    thisProduct.element.querySelector(select.menuProduct.imageWrapper)
 }
 
 
@@ -165,11 +167,25 @@ initOrderForm(){
       for(let optionId in param.options) {
       
   
+        const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+        console.log(optionId)
+        const clickedElement = formData[paramId] && formData[paramId].includes(optionId)
+        if (optionImage) {
+          if (clickedElement) {
+             optionImage.classList.add(classNames.menuProduct.imageVisible);
+           }
+           else {
+             optionImage.classList.remove(classNames.menuProduct.imageVisible);
+           }
+         }
+
         const option = param.options[optionId];
-        if(formData[paramId] && formData[paramId].includes(optionId) && (option.default==true)){
+        if(clickedElement && (option.default==true)){
           price = price
+         
+
         }
-        else if(formData[paramId] && formData[paramId].includes(optionId) && (!option.default==true)){
+        else if(clickedElement && (!option.default==true)){
           price+=option.price
         }
         else if(formData[paramId] && !formData[paramId].includes(optionId) && (option.default==true)){
