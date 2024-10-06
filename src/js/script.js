@@ -72,8 +72,9 @@ const select = {
       console.log('classNames:', classNames);
       console.log('settings:', settings);
       console.log('templates:', templates);
-      thisApp.initData()
-      thisApp.initMenu()
+      thisApp.initData();
+      thisApp.initMenu();
+    
     },
   };
 
@@ -84,16 +85,19 @@ class Products {
     thisProduct.id = id
     thisProduct.data = data
     thisProduct.renderInMenu()
+    thisProduct.getElements();
     thisProduct.initAccordion()
+    thisProduct.initOrderForm()
+    thisProduct.processOrder()
     console.log(thisProduct)
  }
  
  renderInMenu(){
   const thisProduct = this
-  const genaretedHTML = templates.menuProduct(thisProduct.data)
-  thisProduct.element = utils.createDOMFromHTML(genaretedHTML)
-  const menuContainer = document.querySelector(select.containerOf.menu)
-  menuContainer.appendChild(thisProduct.element)
+  const genaretedHTML = templates.menuProduct(thisProduct.data);
+  thisProduct.element = utils.createDOMFromHTML(genaretedHTML);
+  const menuContainer = document.querySelector(select.containerOf.menu);
+  menuContainer.appendChild(thisProduct.element);
  }
 
  getElements(){
@@ -114,10 +118,7 @@ class Products {
 
  initAccordion(){
   const thisProduct = this;
- 
-  const clickableTrigger = thisProduct.element.querySelector(select.menuProduct.clickable)
- 
-      clickableTrigger.addEventListener('click', function(event) 
+  thisProduct.accordionTrigger.addEventListener('click', function(event) 
     {
     event.preventDefault()
       
@@ -129,6 +130,15 @@ class Products {
     thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive)
   });
 }
+
+initOrderForm(){
+  console.log(initOrderForm)
+}
+ processOrder(){
+  console.log(this.processOrder)
+ }
+
+
 }
 
 
