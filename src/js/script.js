@@ -84,6 +84,7 @@ class Products {
     thisProduct.id = id
     thisProduct.data = data
     thisProduct.renderInMenu()
+    thisProduct.initAccordion()
     console.log(thisProduct)
  }
  
@@ -93,6 +94,9 @@ class Products {
   thisProduct.element = utils.createDOMFromHTML(genaretedHTML)
   const menuContainer = document.querySelector(select.containerOf.menu)
   menuContainer.appendChild(thisProduct.element)
+ }
+ initAccordion(){
+
  }
 }
 
