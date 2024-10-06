@@ -166,6 +166,15 @@ initOrderForm(){
       
   
         const option = param.options[optionId];
+        if(formData[paramId] && formData[paramId].includes(optionId) && (option.default==true)){
+          price = price
+        }
+        else if(formData[paramId] && formData[paramId].includes(optionId) && (!option.default==true)){
+          price+=option.price
+        }
+        else if(formData[paramId] && !formData[paramId].includes(optionId) && (option.default==true)){
+          price-=option.price
+        }
         console.log(optionId, option);
       }
     }
