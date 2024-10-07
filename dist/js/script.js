@@ -182,7 +182,7 @@ initOrderForm(){
         const option = param.options[optionId];
         if(clickedElement && (option.default==true)){
           
-          price 
+          price == price
          
 
         }
