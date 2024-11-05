@@ -124,9 +124,15 @@ class Products {
     thisProduct.element.querySelector(select.menuProduct.priceElem);
     thisProduct.imageWrapper =
     thisProduct.element.querySelector(select.menuProduct.imageWrapper)
+
+    thisProduct.amountwidgetElem = 
+    thisProduct.element.querySelector(select.menuProduct.amountWidget)
 }
 
-
+initAmountWidget(){
+  const thisProduct = this;
+  thisProduct.amountWidget = new AmountWidget(thisProduct.amountwidgetElem)
+}
 
  initAccordion(){
   const thisProduct = this;
