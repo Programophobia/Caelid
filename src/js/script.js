@@ -52,6 +52,16 @@ const select = {
     menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
   };
 
+class AmountWidget {
+  constructor(element){
+   const thisWidget = this
+   console.log(thisWidget)
+   console.log(element)
+this 
+  }
+}
+
+
   const app = {
     initMenu: function(){
       const thisApp = this
