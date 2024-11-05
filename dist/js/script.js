@@ -98,6 +98,7 @@ class Products {
     thisProduct.getElements();
     thisProduct.initAccordion()
     thisProduct.initOrderForm()
+    thisProduct.initAmountWidget()
     thisProduct.processOrder()
     console.log(thisProduct)
  }
