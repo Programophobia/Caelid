@@ -70,6 +70,13 @@ this
      thisWidget.linkIncrease =
     thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
      }
+
+     setValue(value){
+      const thisWidget = this;
+      const newValue = parsedIn(value)
+      thisWidget.value = newValue;
+      thisWidget.input.value = thisWidget.value
+     }
   }
 
 
