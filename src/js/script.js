@@ -86,8 +86,9 @@ this
       if(thisWidget.value !== newValue && !isNaN(newValue) && newValue<11 && newValue>0){
       thisWidget.value = newValue;
       }
-      thisWidget.announce();
+     
       thisWidget.input.value = thisWidget.value
+      thisWidget.announce();
      }
 
      initActions() {
@@ -181,6 +182,9 @@ class Products {
 initAmountWidget(){
   const thisProduct = this;
   thisProduct.amountWidget = new AmountWidget(thisProduct.amountwidgetElem)
+  thisProduct.amountwidgetElem.addEventListener('change', function(){
+    thisProduct.processOrder()
+  })
 }
 
  initAccordion(){
@@ -260,7 +264,7 @@ initOrderForm(){
         console.log(optionId, option);
       }
     }
-   
+   price = price * thisProduct.amountWidget.value
     thisProduct.priceElem.innerHTML = price;
     const test = thisProduct.data.class
     console.log(test)
