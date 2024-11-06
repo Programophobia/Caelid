@@ -106,7 +106,7 @@ this
       thisWidget.setValue(thisWidget.value +1);
      })
      
-    }
+    } 
   }
 
 
