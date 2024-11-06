@@ -73,14 +73,20 @@ this
     thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
      }
 
+     announce(){
+      const thisWidget = this;
+      const event = new Event ('updated');
+      thisWidget.element.dispatchEvent(event)
+     }
      setValue(value){
       const thisWidget = this;
       const newValue = parseInt(value)
 
 
-      if(thisWidget.value !== newValue && !isNaN(newValue)){
+      if(thisWidget.value !== newValue && !isNaN(newValue) && newValue<11 && newValue>0){
       thisWidget.value = newValue;
       }
+      thisWidget.announce();
       thisWidget.input.value = thisWidget.value
      }
 
