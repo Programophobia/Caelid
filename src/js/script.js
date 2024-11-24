@@ -167,7 +167,8 @@
 
     initOrderForm() {
       const thisProduct = this;
-
+      thisProduct.linkDecrease = thisProduct.element.querySelector(select.widgets.amount.linkDecrease);
+      thisProduct.linkIncrease = thisProduct.element.querySelector(select.widgets.amount.linkIncrease);
       thisProduct.form.addEventListener('submit', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
@@ -184,7 +185,7 @@
         thisProduct.processOrder();
       });
     }
-
+    
      processOrder() {
        const thisProduct = this;
        const formData = utils.serializeFormToObject(thisProduct.form);
@@ -301,13 +302,14 @@
       thisWidget.linkDecrease.addEventListener('click', function (event) {
         event.preventDefault();
         thisWidget.setValue(thisWidget.value -1);
-        processOrder()
+      
       });
       thisWidget.linkIncrease.addEventListener('click', function (event) {
         event.preventDefault();
         thisWidget.setValue(thisWidget.value + 1);
-        processOrder()
+     
       });
+      
     }
     announce() {
       const thisWidget = this;
