@@ -301,10 +301,12 @@
       thisWidget.linkDecrease.addEventListener('click', function (event) {
         event.preventDefault();
         thisWidget.setValue(thisWidget.value -1);
+        processOrder()
       });
       thisWidget.linkIncrease.addEventListener('click', function (event) {
         event.preventDefault();
         thisWidget.setValue(thisWidget.value + 1);
+        processOrder()
       });
     }
     announce() {
@@ -312,6 +314,10 @@
 
       const event = new Event('updated');
       thisWidget.element.dispatchEvent(event);
+    }
+    addToCart(){
+      const thisProduct = this;
+      app.card.add(thisProduct)
     }
   }
 
@@ -346,7 +352,10 @@ class Cart {
 
       thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
     });
-
+  }
+  add(menuProduct){
+    const thisCart = this;
+    console.log(menuProduct)
   }
 }
 
