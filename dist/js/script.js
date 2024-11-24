@@ -165,6 +165,13 @@
     });
     }
 
+
+    addToCart(){
+      const thisProduct = this;
+      app.card.add(thisProduct)
+    }
+
+
     initOrderForm() {
       const thisProduct = this;
       thisProduct.linkDecrease = thisProduct.element.querySelector(select.widgets.amount.linkDecrease);
@@ -319,10 +326,6 @@
       thisWidget.element.dispatchEvent(event);
     }
 
-    addToCart(){
-      const thisProduct = this;
-      app.card.add(thisProduct)
-    }
   }
 
 class Cart {
