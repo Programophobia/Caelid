@@ -183,9 +183,10 @@
       thisProduct.cartButton.addEventListener('click', function (event) {
         event.preventDefault();
         thisProduct.processOrder();
+        thisProduct.addToCart();
       });
     }
-    
+
      processOrder() {
        const thisProduct = this;
        const formData = utils.serializeFormToObject(thisProduct.form);
@@ -309,14 +310,15 @@
         thisWidget.setValue(thisWidget.value + 1);
      
       });
-      
     }
+
     announce() {
       const thisWidget = this;
 
       const event = new Event('updated');
       thisWidget.element.dispatchEvent(event);
     }
+
     addToCart(){
       const thisProduct = this;
       app.card.add(thisProduct)
