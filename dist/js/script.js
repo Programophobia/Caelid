@@ -109,7 +109,16 @@ this
     } 
   }
 
+class Cart {
+  cinstructor(element){
+    const thisCart = this;
+thisCart.getElements(element)
+  }
 
+  getElements (element){
+
+  }
+}
 
   const app = {
     initMenu: function(){
