@@ -112,10 +112,14 @@ this
 class Cart {
   cinstructor(element){
     const thisCart = this;
+    thisCart.products = [];
 thisCart.getElements(element)
   }
 
   getElements (element){
+    const thisCart = this;
+    thisCart.dom ={};
+    thisCart.dom.wrapper = element;
 
   }
 }
