@@ -429,6 +429,7 @@ thisCartProduct.getElements(element)
 
 getElements(element){
   const thisCartProduct = this
+  thisCartProduct.dom = {}
 }
 
 }
