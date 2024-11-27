@@ -408,6 +408,8 @@ class Cart {
       // Dodaj wygenerowany element DOM do thisCart.dom.productList
       thisCart.dom.productList.appendChild(generatedDOM);
       //thisCart.dom.productList.appendChild(generateDOM);
+      thisCart.products.push(menuProduct)
+      console.log('test', thisCart.menuProduct)
       console.log('adding product', menuProduct);
       
     }
