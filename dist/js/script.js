@@ -251,7 +251,7 @@
 
   prepareCartProduct(){
 
-    const thisProduct = this;
+    const thisProduct = this; 
     const productSummary = {
       id: thisProduct.id,
         name: thisProduct.data.name,
