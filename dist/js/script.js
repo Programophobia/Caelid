@@ -430,6 +430,10 @@ thisCartProduct.getElements(element)
 getElements(element){
   const thisCartProduct = this
   thisCartProduct.dom = {}
+  thisCartProduct.dom.amountWidget = document.querySelector(select.cartProduct.amountWidget);
+  thisCartProduct.dom.price = document.querySelector(select.cartProduct.price);
+  thisCartProduct.dom.edit = document.querySelector(select.cartProduct.edit);
+  thisCartProduct.dom.remove = document.querySelector(select.cartProduct.remove);
 }
 
 }
