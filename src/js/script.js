@@ -415,9 +415,9 @@ class Cart {
 }
 
 class CartProducts {
-constructor(){
+constructor(menuProduct, element){
   const thisCartProduct = this;
-
+thisCartProduct.id = menuProduct.id;
 }
 
 
