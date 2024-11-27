@@ -414,6 +414,16 @@ class Cart {
     
 }
 
+class CartProducts {
+constructor(){
+  const thisCartProduct = this;
+
+}
+
+
+}
+
+
   const app = {
 
     initData: function () {
