@@ -251,7 +251,7 @@
 
   prepareCartProduct(){
 
-    const thisProduct = this; 
+    const thisProduct = this;
     const productSummary = {
       id: thisProduct.id,
         name: thisProduct.data.name,
@@ -399,9 +399,7 @@ class Cart {
   }
 
     add(menuProduct){
-
     const thisCart = this;
-    thisCart.products = [];
     const generatedHTML = templates.cartProduct(menuProduct);
     console.log(generatedHTML);
     //create element using utils.createElementFromHTML
@@ -410,8 +408,6 @@ class Cart {
       // Dodaj wygenerowany element DOM do thisCart.dom.productList
       thisCart.dom.productList.appendChild(generatedDOM);
       //thisCart.dom.productList.appendChild(generateDOM);
-      thisCart.products.push(menuProduct)
-      console.log('test', thisCart.productsroduct)
       console.log('adding product', menuProduct);
       
     }
