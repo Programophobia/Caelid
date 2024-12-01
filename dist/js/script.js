@@ -405,7 +405,14 @@ class Cart{
       const deliveryFee = settings.defaultDeliveryFee;
       totalNumber = 0;
        subtotalPrice = 0;
+       for(let product of thisCart.products){
+        totalNumber = thisCart.products[product].amount;
+        subtotalPrice = thisCart.products[product].price
+       }
+       if(subtotalPrice != 0){
+       thisCart.totalPrice = deliveryFee + subtotalPrice
     }
+  }
   }
   
   class CartProduct {
