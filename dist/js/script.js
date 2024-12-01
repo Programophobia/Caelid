@@ -191,22 +191,20 @@
        console.log('formData', formData);
        console.log(thisProduct.processOrder);
  
-        // set price to default price
        let price = thisProduct.data.price;
      
-       // for every category (param)...
        for(let paramId in thisProduct.data.params) {
-         // determine param value, e.g. paramId = 'toppings', param = { label: 'Toppings', type: 'checkboxes'... }
+
          const param = thisProduct.data.params[paramId];
          console.log(paramId, param);
  
-       // for every option in this category
+       
        for(let optionId in param.options) {
-         // determine option value, e.g. optionId = 'olives', option = { label: 'Olives', price: 2, default: true }
+      
          const option = param.options[optionId];
          console.log(optionId, option);
  
-         //if option is clicked, add active class/else remove
+       
          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
          const clickedElement = formData[paramId] && formData[paramId].includes(optionId);
      
@@ -220,17 +218,17 @@
            }
          }
  
-       //if label is clicken and default == true, return: add 0 to price
+    
  
        if(clickedElement && (option.default == true)) {
          price == price;
        }
-       //if label is clicked and default == null, add option.price to let price
+       
        else if(clickedElement && (!option.default == true)) {
          price += option.price;
        }
  
-       //if label isnt clicked and default true, reduce option.price for let price
+
        else if((option.default == true) && !clickedElement) {
        price = price - option.price;
        }
@@ -238,7 +236,7 @@
    }
    thisProduct.priceSingle = price;
    
-   // update calculated price in the HTML
+  
    price = price * thisProduct.amountWidget.value; 
    thisProduct.priceElem.innerHTML = price;
   }
@@ -275,7 +273,6 @@
         options: {}
       }
 
-    // for every option in this category
     for(let optionId in param.options) {
 
       const option = param.options[optionId];
@@ -295,6 +292,7 @@ addToCart(){
 
 }
   }
+
   class AmountWidget {
    constructor(element){
    const thisWidget = this;
@@ -326,8 +324,6 @@ addToCart(){
       const thisWidget = this;
       const newValue = parseInt(value);
 
-
-      /* TODO : Add validation */
 
       if (thisWidget.value !== newValue && !isNaN(newValue) 
       &&  thisWidget.input.value  >= settings.amountWidget.defaultMin 
@@ -402,6 +398,13 @@ class Cart{
       const generatedDOM = utils.createDOMFromHTML(generatedHTML);
       thisCart.dom.productList.appendChild(generatedDOM);
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
+    }
+
+    update(){
+      const thisCart = this;
+      const deliveryFee = settings.defaultDeliveryFee;
+      totalNumber = 0;
+       subtotalPrice = 0;
     }
   }
   
