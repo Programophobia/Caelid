@@ -471,7 +471,7 @@ class Cart{
         detail: {
           cartProduct: thisCartProduct,
         },
-      });
+      });  
 
       thisCartProduct.dom.wrapper.dispatchEvent(event);
 
