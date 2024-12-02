@@ -477,6 +477,8 @@ class Cart{
 
     }
 
+
+
     initActions(){
       const thisCartProduct = this;
       thisCartProduct.dom.edit.addEventListener('click', function(event){
